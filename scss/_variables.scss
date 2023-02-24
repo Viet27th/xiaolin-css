@@ -1,0 +1,65 @@
+////
+/// Sass Variables
+/// All public variables of this library will be defined here
+///  
+/// References:
+/// https://nextjs.org/docs/basic-features/built-in-css-support#sass-variables
+////
+
+// Define some variables for configuration
+$libraryName: Xiaolin CSS;
+$libraryVersion: 0.1.0;
+$libraryLicenseLink: "https://github.com/Viet27th/xiaolin-css";
+
+// Define the condition variables
+$enableSmoothScroll: true !default;
+
+/// Point to break layout
+$breakpoints: (
+  sm: 576, // ≥576px Small
+  md: 768, // ≥768px Medium
+  lg: 992, // ≥992px Large
+  xl: 1200, // ≥1200px Extra large
+  xxl: 1400 // ≥1400px Extra extra large
+) !default;
+
+/// Max width of containers
+$containerMaxWidths: (
+  sm: 544px,
+  md: 720px,
+  lg: 960px,
+  xl: 1152px,
+  xxl: 1312px
+) !default;
+
+/// Max width of container
+$containerFluidLimitMaxWidth: 1920px !default;
+
+/// Main spacing for this Library.
+/// containers, grid, and so on use this.
+/// Default is `16px` cause 16:9 aspect ratio is the most common aspect ratio for 
+/// televisions and computer monitors
+$mainGutterWidth: 16px !default;
+
+/// Used to set the default `font-size` for the entire website
+$fontSizeRoot: 14px !default;
+
+/// Used to set the default `font-size` for the entire website. This value related with `$fontSizeRoot`
+/// 
+/// @see $fontSizeRoot
+$fontSizeBase: 1rem !default;
+
+/// Default `font-family` for the entire website
+$defaultFontFamily: "Arial", sans-serif !default;
+
+/// Default `font-weight` for the entire website
+$defaultFontWeight: 400 !default;
+
+/// Default `line-height` for the entire website
+$defaultLineHeight: 1 !default;
+
+/// Sizes for `gap`, `gap-row`, `gap-column` properties
+$gapSizes: 0, 4, 8, 16, 32, 64 !default;
+
+/// Sizes for `padding`, `margin` properties
+$gutterSizes: 0, 4, 8, 16, 32, 64 !default;

@@ -1,0 +1,45 @@
+////
+/// Create containers
+////
+@use "variables";
+@use "mixins";
+
+%_base-container-css {
+  width: 100%;
+  padding-right: variables.$mainGutterWidth;
+  padding-left: variables.$mainGutterWidth;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container,
+.container-fluid,
+.container-fluid-limit {
+  @extend %_base-container-css;
+}
+
+@each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
+  .container-#{$breakpoint_key} {
+    @extend %_base-container-css;
+  }
+}
+
+.container-fluid-limit {
+  max-width: variables.$containerFluidLimitMaxWidth;
+}
+
+@each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
+  @include mixins.MinWidth($breakpoint_key) {
+    .container {
+      max-width: map-get(variables.$containerMaxWidths, $breakpoint_key);
+    }
+
+    @each $breakpoint_key2, $breakpoint_value2 in variables.$breakpoints {
+      @if ($breakpoint_value2 <= $breakpoint_value) {
+        .container-#{$breakpoint_key2} {
+          max-width: map-get(variables.$containerMaxWidths, $breakpoint_key);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,141 @@
+////
+/// CSS for "padding" và "margin"
+////
+@use "variables";
+@use "mixins";
+
+$_properties: (
+  "m": "margin",
+  "p": "padding",
+);
+$_sides: (
+  "t": "top",
+  "b": "bottom",
+  "s": "left",
+  "e": "right",
+  "x": "",
+  "y": "",
+);
+$_maxGutterSize: 50;
+
+// Return .m-auto and .p-auto
+@each $property_key, $property_value in $_properties {
+  .#{$property_key}-auto {
+    #{$property_value}: auto !important;
+  }
+}
+
+// Return .m-[breakpoints]-auto and .p-[breakpoints]-auto
+@each $property_key, $property_value in $_properties {
+  @each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
+    @include mixins.MinWidth($breakpoint_key) {
+      .#{$property_key}-#{$breakpoint_key}-auto {
+        #{$property_value}: auto !important;
+      }
+    }
+  }
+}
+
+// Return .m[sides]-auto and .p[sides]-auto
+@each $property_key, $property_value in $_properties {
+  @each $side_key, $side_value in $_sides {
+    .#{$property_key}#{$side_key}-auto {
+      @if $side_key == x {
+        #{$property_value}-left: auto !important;
+        #{$property_value}-right: auto !important;
+      } @else if $side_key == y {
+        #{$property_value}-top: auto !important;
+        #{$property_value}-bottom: auto !important;
+      } @else {
+        #{$property_value}-#{$side_value}: auto !important;
+      }
+    }
+  }
+}
+
+// Return .m[sides]-[breakpoints]-auto and .p[sides]-[breakpoints]-auto
+@each $property_key, $property_value in $_properties {
+  @each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
+    @include mixins.MinWidth($breakpoint_key) {
+      @each $side_key, $side_value in $_sides {
+        .#{$property_key}#{$side_key}-#{$breakpoint_key}-auto {
+          @if $side_key == x {
+            #{$property_value}-left: auto !important;
+            #{$property_value}-right: auto !important;
+          } @else if $side_key == y {
+            #{$property_value}-top: auto !important;
+            #{$property_value}-bottom: auto !important;
+          } @else {
+            #{$property_value}-#{$side_value}: auto !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ===========================================================================================
+
+// Return .m-[0->50] and .p-[0->50]
+@each $property_key, $property_value in $_properties {
+  @each $i in variables.$gutterSizes {
+    .#{$property_key}-#{$i} {
+      #{$property_value}: #{$i}px !important;
+    }
+  }
+}
+
+// Return .m-[breakpoints]-[0->50] and .p-[breakpoints]-[0->50]
+@each $property_key, $property_value in $_properties {
+  @each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
+    @include mixins.MinWidth($breakpoint_key) {
+      @each $i in variables.$gutterSizes {
+        .#{$property_key}-#{$breakpoint_key}-#{$i} {
+          #{$property_value}: #{$i}px !important;
+        }
+      }
+    }
+  }
+}
+
+// Return .m[sides]-[0->50] and .p[sides]-[0->50]
+@each $property_key, $property_value in $_properties {
+  @each $side_key, $side_value in $_sides {
+    @each $i in variables.$gutterSizes {
+      .#{$property_key}#{$side_key}-#{$i} {
+        @if $side_key == x {
+          #{$property_value}-left: #{$i}px !important;
+          #{$property_value}-right: #{$i}px !important;
+        } @else if $side_key == y {
+          #{$property_value}-top: #{$i}px !important;
+          #{$property_value}-bottom: #{$i}px !important;
+        } @else {
+          #{$property_value}-#{$side_value}: #{$i}px !important;
+        }
+      }
+    }
+  }
+}
+
+// Return .m[sides]-[breakpoints]-[0->50] and .p[sides]-[breakpoints]-[0->50]
+@each $property_key, $property_value in $_properties {
+  @each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
+    @include mixins.MinWidth($breakpoint_key) {
+      @each $side_key, $side_value in $_sides {
+        @each $i in variables.$gutterSizes {
+          .#{$property_key}#{$side_key}-#{$breakpoint_key}-#{$i} {
+            @if $side_key == x {
+              #{$property_value}-left: #{$i}px !important;
+              #{$property_value}-right: #{$i}px !important;
+            } @else if $side_key == y {
+              #{$property_value}-top: #{$i}px !important;
+              #{$property_value}-bottom: #{$i}px !important;
+            } @else {
+              #{$property_value}-#{$side_value}: #{$i}px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+////
+///  CSS for
+///  "width", "min-width", "max-width"
+///  "height", "min-height", "max-height"
+////
+@use "variables";
+@use "mixins";
+
+$_properties: (
+  w: "width",
+  h: "height",
+);
+$_sizes: (
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%,
+  auto: auto,
+);
+
+@each $property_key, $property_value in $_properties {
+  @each $size_key, $size_value in $_sizes {
+    // Return .w-[sizes], .h-[sizes]
+    .#{$property_key}-#{$size_key} {
+      #{$property_value}: $size_value !important;
+    }
+
+    // Return .min-w-[sizes], .min-h-[sizes]
+    .min-#{$property_key}-#{$size_key} {
+      min-#{$property_value}: $size_value !important;
+    }
+
+    // Return .max-w-[sizes], .max-h-[sizes]
+    .max-#{$property_key}-#{$size_key} {
+      max-#{$property_value}: $size_value !important;
+    }
+
+    // Return .vw-[sizes], .vh-[sizes]
+    @if ($size_value != auto) {
+      .v#{$property_key}-#{$size_key} {
+        #{$property_value}: #{$size_key}v#{$property_key} !important;
+      }
+    }
+
+    // Return .min-vw-[sizes], .min-vh-[sizes]
+    @if ($size_value != auto) {
+      .min-v#{$property_key}-#{$size_key} {
+        min-#{$property_value}: #{$size_key}v#{$property_key} !important;
+      }
+    }
+
+    // Return .max-vw-[sizes], .max-vh-[sizes]
+    @if ($size_value != auto) {
+      .max-v#{$property_key}-#{$size_key} {
+        max-#{$property_value}: #{$size_key}v#{$property_key} !important;
+      }
+    }
+
+    @each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
+      @include mixins.MinWidth($breakpoint_key) {
+        // Return .w-[breakpoints]-[sizes], .h-[breakpoints]-[sizes]
+        .#{$property_key}-#{$breakpoint_key}-#{$size_key} {
+          #{$property_value}: $size_value !important;
+        }
+
+        // Return .min-w-[breakpoints]-[sizes], .min-h-[breakpoints]-[sizes]
+        .min-#{$property_key}-#{$breakpoint_key}-#{$size_key} {
+          min-#{$property_value}: $size_value !important;
+        }
+
+        // Return .max-w-[breakpoints]-[sizes], .max-h-[breakpoints]-[sizes]
+        .max-#{$property_key}-#{$breakpoint_key}-#{$size_key} {
+          max-#{$property_value}: $size_value !important;
+        }
+
+        // Return .vw-[breakpoints]-[sizes], .vh-[breakpoints]-[sizes]
+        @if ($size_value != auto) {
+          .v#{$property_key}-#{$breakpoint_key}-#{$size_key} {
+            #{$property_value}: #{$size_key}v#{$property_key} !important;
+          }
+        }
+
+        // Return .min-vw-[breakpoints]-[sizes], .min-vh-[breakpoints]-[sizes]
+        @if ($size_value != auto) {
+          .min-v#{$property_key}-#{$breakpoint_key}-#{$size_key} {
+            min-#{$property_value}: #{$size_key}v#{$property_key} !important;
+          }
+        }
+
+        // Return .max-vw-[breakpoints]-[sizes], .max-vh-[breakpoints]-[sizes]
+        @if ($size_value != auto) {
+          .max-v#{$property_key}-#{$breakpoint_key}-#{$size_key} {
+            max-#{$property_value}: #{$size_key}v#{$property_key} !important;
+          }
+        }
+      }
+    }
+  }
+}

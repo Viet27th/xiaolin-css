@@ -1,0 +1,7 @@
+@use "variables";
+
+/*!
+  #{variables.$libraryName} v#{variables.$libraryVersion} (https://xiaolincss.com)
+  Copyright 2022-2023 The #{variables.$libraryName} Authors
+  Licensed under MIT (#{variables.$libraryLicenseLink})
+*/

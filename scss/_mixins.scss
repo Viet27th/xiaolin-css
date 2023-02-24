@@ -1,0 +1,81 @@
+////
+/// Mixins
+/// 
+/// References:
+/// https://sass-lang.com/documentation/at-rules/mixin
+////
+@use "variables";
+
+/// This one let allow define media query within one class.
+/// <br>
+/// The media queries affect screen widths with the given breakpoint or `larger`.
+/// 
+/// @access public
+/// 
+/// @param {<code>sm, md, lg, xl, xxl</code>} $breakpoint - Point to break layout
+/// 
+/// @output `@media` query match with `breakpoint`
+/// 
+/// @require {variable} $breakpoints - Point to break layout
+/// 
+/// @example scss
+///   @include MinWidth(md) {
+///     padding-bottom: 11px;
+///   }
+/// 
+///   // Output
+///   @media (min-width: 768px) {
+///     padding-bottom: 11px;
+///   }
+/// 
+/// @see $breakpoints
+/// 
+/// @link https://css-tricks.com/media-queries-sass-3-2-and-codekit
+/// @link https://sass-lang.com/documentation/variables
+/// @link https://sass-lang.com/documentation/modules/map
+@mixin MinWidth($breakpoint) {
+  @if map-has-key(variables.$breakpoints, $breakpoint) {
+    @media (min-width: #{map-get(variables.$breakpoints, $breakpoint)}px) {
+      @content;
+    }
+  } @else {
+    @error "[#{variables.$libraryName}] - Unknown direction #{$breakpoint}.";
+  }
+}
+
+/// This one let allow define media query within one class.
+/// <br>
+/// The media queries affect screen widths with the given breakpoint or `smaller`.
+/// 
+/// @access public
+/// 
+/// @param {<code>sm, md, lg, xl, xxl</code>} $breakpoint - Point to break layout
+/// 
+/// @output `@media` query match with `breakpoint`
+/// 
+/// @require {variable} $breakpoints - Point to break layout
+/// 
+/// @example scss
+///   @include MaxWidth(md) {
+///     padding-bottom: 11px;
+///   }
+/// 
+///   // Output
+///   @media (max-width: 767px) {
+///     padding-bottom: 11px;
+///   }
+/// 
+/// @see $breakpoints
+/// 
+/// @link https://css-tricks.com/media-queries-sass-3-2-and-codekit
+/// @link https://sass-lang.com/documentation/variables
+/// @link https://sass-lang.com/documentation/modules/map
+@mixin MaxWidth($breakpoint) {
+  @if map-has-key(variables.$breakpoints, $breakpoint) {
+    @media (max-width: #{map-get(variables.$breakpoints, $breakpoint) - 1}px) {
+      @content;
+    }
+  } @else {
+    @error "[#{variables.$libraryName}] - Unknown direction #{$breakpoint}.";
+  }
+}

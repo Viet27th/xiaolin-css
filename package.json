@@ -1,0 +1,39 @@
+{
+  "name": "xiaolin-css",
+  "version": "0.1.0",
+  "description": "Lightweight CSS Framework",
+  "author": "Vieth27th@gmail.com",
+  "license": "MIT",
+  "sass": "scss/xiaolin.scss",
+  "style": "dist/css/xiaolin.css",
+  "scripts": {
+    "clean": "rimraf dist sassdoc",
+    "generate:doc": "sassdoc scss/",
+    "dev": "yarn clean && sass --watch --no-source-map --style=expanded --error-css --trace scss:dist/css",
+    "build": "yarn clean && yarn generate:doc && sass scss/xiaolin.scss:dist/css/xiaolin.css && sass --style=compressed scss/xiaolin.scss:dist/css/xiaolin.min.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Viet27th/xiaolin-css.git"
+  },
+  "keywords": [
+    "XiaolinCSS",
+    "xiaolin CSS",
+    "Lightweight CSS framework",
+    "CSS like as bootstrap",
+    "css",
+    "sass",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "framework",
+    "web"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "rimraf": "^4.1.2",
+    "sass": "^1.58.3",
+    "sassdoc": "^2.7.4"
+  },
+  "peerDependencies": {}
+}

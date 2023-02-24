@@ -1,0 +1,68 @@
+////
+/// Create grid layout
+////
+@use "variables";
+@use "mixins";
+
+$_columnNumber: 12;
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -#{variables.$mainGutterWidth};
+  margin-right: -#{variables.$mainGutterWidth};
+}
+
+// Return .col-auto
+.col-auto {
+  flex: 0 0 auto;
+  width: auto;
+  padding: variables.$mainGutterWidth;
+}
+
+// Return .col-[breakpoints]-auto
+@each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
+  @include mixins.MinWidth($breakpoint_key) {
+    .col-#{$breakpoint_key}-auto {
+      flex: 0 0 auto;
+      width: auto;
+      padding: variables.$mainGutterWidth;
+    }
+  }
+}
+
+// Return .col-[1->12]
+@for $i from 1 through $_columnNumber {
+  .col-#{$i} {
+    flex: 0 0 auto;
+    width: calc($i / $_columnNumber) * 100%;
+    padding: variables.$mainGutterWidth;
+  }
+}
+
+// Return .col, .col-[breakpoints]
+.col {
+  flex: 1 0 0%;
+  padding: variables.$mainGutterWidth;
+}
+@each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
+  @include mixins.MinWidth($breakpoint_key) {
+    .col-#{$breakpoint_key} {
+      flex: 1 0 0%;
+      padding: variables.$mainGutterWidth;
+    }
+  }
+}
+
+// Return .col-[breakpoints]-[1->12]
+@each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
+  @include mixins.MinWidth($breakpoint_key) {
+    @for $i from 1 through $_columnNumber {
+      .col-#{$breakpoint_key}-#{$i} {
+        flex: 0 0 auto;
+        width: calc($i / $_columnNumber) * 100%;
+        padding: variables.$mainGutterWidth;
+      }
+    }
+  }
+}

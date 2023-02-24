@@ -1,0 +1,27 @@
+//
+//  Main CSS
+//  Avoid using @import. Use @use and @forward instead.
+//
+//  Rules:
+//  Variables in `_variables.scss` file can override if it's `!default`
+//  Variables, mixins, functions, extends in other SCSS files must be private variables
+//    and have the following form: $[- | _][name]: value; to avoid duplicate variable name.
+//
+//  * References:
+//  https://sass-lang.com/documentation/at-rules/use
+//  https://sass-lang.com/documentation/at-rules/use#private-members
+//  https://sass-lang.com/documentation/at-rules/use#configuration
+
+// Required
+@forward "variables";
+@forward "mixins";
+
+@use "library-statement";
+
+// Optional
+@forward "reset";
+@forward "containers";
+@forward "spacing";
+@forward "grid";
+@forward "displays";
+@forward "dimensions";
