@@ -44,7 +44,6 @@ $fontFamilies: (
 
 // Override the default variables of library
 @use "xiaolin-css/scss/xiaolin.scss" with (
-  $enableSmoothScroll: true,
   $breakpoints: $breakpoints,
   $containerMaxWidths: $containerMaxWidths,
   $containerFluidLimitMaxWidth: $containerFluidLimitMaxWidth,
