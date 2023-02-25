@@ -29,9 +29,9 @@ $containerMaxWidths: (
   xl: 1152px,
   xxl: 1312px
 );
-$mainGutterWidth: 16px;
-$fontSizeRoot: 14px;
-$fontSizeBase: 1rem;
+$containerFluidLimitMaxWidth: 1920px;
+$mainGutterWidth: 16px; // Spacing for "containers, grid, and so on"
+$fontSizeRoot: 14px; // Default font size for entire website
 $_fontFallback: Arial, Helvetica, sans-serif;
 $fontFamilies: (
   default: ("Inter", "Poppins", "Red Hat", #{$_fontFallback}),
@@ -47,12 +47,13 @@ $fontFamilies: (
   $enableSmoothScroll: true,
   $breakpoints: $breakpoints,
   $containerMaxWidths: $containerMaxWidths,
+  $containerFluidLimitMaxWidth: $containerFluidLimitMaxWidth,
   $mainGutterWidth: $mainGutterWidth,
   $fontSizeRoot: $fontSizeRoot,
-  $fontSizeBase: $fontSizeBase,
   $defaultFontFamily: map-get($fontFamilies, default),
   $defaultFontWeight: 400,
   $defaultLineHeight: 1,
+  $gapSizes: (0, 4, 8, 16, 32, 64),
   $gutterSizes: (0, 4, 5, 8, 10, 16, 32, 64)
 );
 ```
