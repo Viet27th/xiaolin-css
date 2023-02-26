@@ -11,9 +11,7 @@
 //  https://sass-lang.com/documentation/at-rules/use#private-members
 //  https://sass-lang.com/documentation/at-rules/use#configuration
 
-@use "project-statement" with (
-  $_version: 0.1.0
-);
+@use "project-statement";
 
 // Required
 @forward "variables";
