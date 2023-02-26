@@ -10,7 +10,10 @@
     "clean": "rimraf dist sassdoc",
     "generate:doc": "sassdoc scss/",
     "dev": "yarn clean && sass --watch --no-source-map --style=expanded --error-css --trace scss:dist/css",
-    "build": "yarn clean && yarn generate:doc && sass scss/xiaolin.scss:dist/css/xiaolin.css && sass --style=compressed scss/xiaolin.scss:dist/css/xiaolin.min.css"
+    "build:file1": "sass scss/xiaolin.scss:dist/css/xiaolin.css && sass --style=compressed scss/xiaolin.scss:dist/css/xiaolin.min.css",
+    "build:file2": "sass scss/xiaolin-reset.scss:dist/css/xiaolin-reset.css && sass --style=compressed scss/xiaolin-reset.scss:dist/css/xiaolin-reset.min.css",
+    "build:file3": "sass scss/xiaolin-grid.scss:dist/css/xiaolin-grid.css && sass --style=compressed scss/xiaolin-grid.scss:dist/css/xiaolin-grid.min.css",
+    "build": "yarn clean && yarn generate:doc && yarn build:file1 && yarn build:file2 && yarn build:file3"
   },
   "repository": {
     "type": "git",
