@@ -12,7 +12,7 @@ Enter this code in your `index.scss` file:
 // In case you want to use the "full" feature
 @use "xiaolin-css/scss/xiaolin.scss";
 
-// or In case you just want to use the "reset" feature
+// or In case you just want to use the "reset CSS" feature
 @use "xiaolin-css/scss/xiaolin-reset.scss";
 
 // or In case you just want to use the "grid" feature
