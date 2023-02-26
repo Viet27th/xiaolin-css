@@ -1,0 +1,19 @@
+$_name: "Xiaolin CSS";
+$_version: "" !default;
+$_website: "https://xiaolincss.com";
+$_licenseLink: "https://github.com/Viet27th/xiaolin-css/blob/master/LICENSE";
+$_fileName: "" !default;
+
+@if ($_fileName == "") {
+  /*!
+    #{$_name} v#{$_version} (#{$_website})
+    Copyright 2022-2023 The #{$_name} Authors
+    Licensed under MIT (#{$_licenseLink})
+  */
+} @else {
+  /*!
+    #{$_name} - #{$_fileName} v#{$_version} (#{$_website})
+    Copyright 2022-2023 The #{$_name} Authors
+    Licensed under MIT (#{$_licenseLink})
+  */
+}

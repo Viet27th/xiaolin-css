@@ -19,7 +19,9 @@
 /// @require {variable} $breakpoints - Point to break layout
 /// 
 /// @example scss
-///   @include MinWidth(md) {
+///   @use "xiaolin-css/scss/mixins" as XiaolinCSSMixins;
+/// 
+///   @include XiaolinCSSMixins.MinWidth(md) {
 ///     padding-bottom: 11px;
 ///   }
 /// 
@@ -56,7 +58,9 @@
 /// @require {variable} $breakpoints - Point to break layout
 /// 
 /// @example scss
-///   @include MaxWidth(md) {
+///   @use "xiaolin-css/scss/mixins" as XiaolinCSSMixins;
+/// 
+///   @include XiaolinCSSMixins.MaxWidth(md) {
 ///     padding-bottom: 11px;
 ///   }
 /// 

@@ -1,4 +1,3 @@
-//
 //  Main CSS
 //  Avoid using @import. Use @use and @forward instead.
 //
@@ -12,11 +11,13 @@
 //  https://sass-lang.com/documentation/at-rules/use#private-members
 //  https://sass-lang.com/documentation/at-rules/use#configuration
 
+@use "project-statement" with (
+  $_version: 0.1.0
+);
+
 // Required
 @forward "variables";
 @forward "mixins";
-
-@use "library-statement";
 
 // Optional
 @forward "reset";
