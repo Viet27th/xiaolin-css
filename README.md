@@ -9,7 +9,14 @@ npm install xiaolin-css
 
 Enter this code in your `index.scss` file:
 ```scss
+// In case you want to use the "full" feature
 @use "xiaolin-css/scss/xiaolin.scss";
+
+// In case you just want to use the "reset" feature
+@use "xiaolin-css/scss/xiaolin-reset.scss";
+
+// In case you just want to use the "grid" feature
+@use "xiaolin-css/scss/xiaolin-grid.scss";
 ```
 
 If you want to override some variables:
