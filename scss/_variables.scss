@@ -58,3 +58,6 @@ $gapSizes: 0, 4, 8, 16, 32, 64 !default;
 
 /// Sizes for `padding`, `margin` properties
 $gutterSizes: 0, 4, 8, 16, 32, 64 !default;
+
+/// Change the visual order of specific flex items with a handful of "order" utilities
+$flexOrders: 1, 2, 3, 4, 5 !default;

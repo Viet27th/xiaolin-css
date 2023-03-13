@@ -1,0 +1,35 @@
+////
+///  CSS for "gap"
+////
+@use "../variables";
+@use "../mixins";
+
+@each $i in variables.$gapSizes {
+  .gap-#{$i} {
+    gap: #{$i}px !important;
+  }
+
+  .gap-row-#{$i} {
+    row-gap: #{$i}px !important;
+  }
+
+  .gap-column-#{$i} {
+    column-gap: #{$i}px !important;
+  }
+
+  @each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
+    @include mixins.MinWidth($breakpoint_key) {
+      .gap-#{$breakpoint_key}-#{$i} {
+        gap: #{$i}px !important;
+      }
+    
+      .gap-row-#{$breakpoint_key}-#{$i} {
+        row-gap: #{$i}px !important;
+      }
+    
+      .gap-column-#{$breakpoint_key}-#{$i} {
+        column-gap: #{$i}px !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+////
+///  CSS for "display grid"
+////
+@use "../variables";
+@use "../mixins";
+
+$_properties: (
+  grid: grid,
+  inline-grid: inline-grid,
+);
+
+@each $property_key, $property_value in $_properties {
+  .d-#{$property_key} {
+    display: $property_value !important;
+  }
+
+  @each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
+    @include mixins.MinWidth($breakpoint_key) {
+      .d-#{$breakpoint_key}-#{$property_key} {
+        display: $property_value !important;
+      }
+    }
+  }
+}

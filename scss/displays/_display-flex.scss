@@ -1,0 +1,229 @@
+////
+///  CSS for "display flex"
+////
+@use "../variables";
+@use "../mixins";
+
+// Display flex
+$_displayProperties: (
+  flex: flex,
+  inline-flex: inline-flex,
+);
+
+@each $property_key, $property_value in $_displayProperties {
+  .d-#{$property_key} {
+    display: $property_value !important;
+  }
+
+  @each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
+    @include mixins.MinWidth($breakpoint_key) {
+      .d-#{$breakpoint_key}-#{$property_key} {
+        display: $property_value !important;
+      }
+    }
+  }
+}
+
+// Flex direction
+$_directionProperties: (
+  row: row,
+  row-reverse: row-reverse,
+  column: column,
+  column-reverse: column-reverse,
+);
+
+@each $property_key, $property_value in $_directionProperties {
+  .flex-#{$property_key} {
+    flex-direction: $property_value !important;
+  }
+
+  @each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
+    @include mixins.MinWidth($breakpoint_key) {
+      .flex-#{$breakpoint_key}-#{$property_key} {
+        flex-direction: $property_value !important;
+      }
+    }
+  }
+}
+
+// Justify content
+$_justifyContentProperties: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  between: space-between,
+  around: space-around,
+  evenly: space-evenly,
+);
+
+@each $property_key, $property_value in $_justifyContentProperties {
+  .justify-content-#{$property_key} {
+    justify-content: $property_value !important;
+  }
+
+  @each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
+    @include mixins.MinWidth($breakpoint_key) {
+      .justify-content-#{$breakpoint_key}-#{$property_key} {
+        justify-content: $property_value !important;
+      }
+    }
+  }
+}
+
+// Align items
+$_alignItemsProperties: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  baseline: baseline,
+  stretch: stretch,
+);
+
+@each $property_key, $property_value in $_alignItemsProperties {
+  .align-items-#{$property_key} {
+    align-items: $property_value !important;
+  }
+
+  @each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
+    @include mixins.MinWidth($breakpoint_key) {
+      .align-items-#{$breakpoint_key}-#{$property_key} {
+        align-items: $property_value !important;
+      }
+    }
+  }
+}
+
+// Align self
+$_alignSelfProperties: (
+  auto: auto,
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  baseline: baseline,
+  stretch: stretch,
+);
+
+@each $property_key, $property_value in $_alignSelfProperties {
+  .align-self-#{$property_key} {
+    align-self: $property_value !important;
+  }
+
+  @each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
+    @include mixins.MinWidth($breakpoint_key) {
+      .align-self-#{$breakpoint_key}-#{$property_key} {
+        align-self: $property_value !important;
+      }
+    }
+  }
+}
+
+// Align content
+$_alignContentProperties: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  between: space-between,
+  around: space-around,
+  stretch: stretch,
+);
+
+@each $property_key, $property_value in $_alignContentProperties {
+  .align-content-#{$property_key} {
+    align-content: $property_value !important;
+  }
+
+  @each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
+    @include mixins.MinWidth($breakpoint_key) {
+      .align-content-#{$breakpoint_key}-#{$property_key} {
+        align-content: $property_value !important;
+      }
+    }
+  }
+}
+
+// Flex wrap
+$_wrapProperties: (
+  nowrap: nowrap,
+  wrap: wrap,
+  wrap-reverse: wrap-reverse,
+);
+
+@each $property_key, $property_value in $_wrapProperties {
+  .flex-#{$property_key} {
+    flex-wrap: $property_value !important;
+  }
+
+  @each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
+    @include mixins.MinWidth($breakpoint_key) {
+      .flex-#{$breakpoint_key}-#{$property_key} {
+        flex-wrap: $property_value !important;
+      }
+    }
+  }
+}
+
+// Flex order
+@each $i in variables.$flexOrders {
+  .order-#{$i} {
+    order: $i !important;
+    -webkit-order: $i !important;
+  }
+
+  @each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
+    @include mixins.MinWidth($breakpoint_key) {
+      .order-#{$breakpoint_key}-#{$i} {
+        order: $i !important;
+        -webkit-order: $i !important;
+      }
+    }
+  }
+}
+
+//
+$_growProperties: 0, 1;
+@each $i in $_growProperties {
+  .flex-grow-#{$i} {
+    flex-grow: $i !important;
+  }
+
+  @each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
+    @include mixins.MinWidth($breakpoint_key) {
+      .flex-#{$breakpoint_key}-grow-#{$i} {
+        flex-grow: $i !important;
+      }
+    }
+  }
+}
+
+//
+$_shrinkProperties: 0, 1;
+@each $i in $_shrinkProperties {
+  .flex-shrink-#{$i} {
+    flex-shrink: $i !important;
+  }
+
+  @each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
+    @include mixins.MinWidth($breakpoint_key) {
+      .flex-#{$breakpoint_key}-shrink-#{$i} {
+        flex-shrink: $i !important;
+      }
+    }
+  }
+}
+
+//
+$_basisProperties: 0, auto;
+@each $i in $_basisProperties {
+  .flex-basis-#{$i} {
+    flex-basis: $i !important;
+  }
+
+  @each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
+    @include mixins.MinWidth($breakpoint_key) {
+      .flex-#{$breakpoint_key}-basis-#{$i} {
+        flex-basis: $i !important;
+      }
+    }
+  }
+}
+
