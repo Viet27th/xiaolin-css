@@ -179,7 +179,7 @@ $_wrapProperties: (
   }
 }
 
-//
+// Flex grow
 $_growProperties: 0, 1;
 @each $i in $_growProperties {
   .flex-grow-#{$i} {
@@ -195,7 +195,7 @@ $_growProperties: 0, 1;
   }
 }
 
-//
+// Flex shrink
 $_shrinkProperties: 0, 1;
 @each $i in $_shrinkProperties {
   .flex-shrink-#{$i} {
@@ -211,7 +211,7 @@ $_shrinkProperties: 0, 1;
   }
 }
 
-//
+// Flex Basis
 $_basisProperties: 0, auto;
 @each $i in $_basisProperties {
   .flex-basis-#{$i} {

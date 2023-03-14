@@ -1,5 +1,20 @@
 # Update versions
 When updating to a new version, need to change in "project-statement file" and "package.json" also.
+<br />
+When dev:
+```bash
+# Run
+yarn dev
+```
+
+When deploy:
+```bash
+# Run
+yarn build
+
+# and then
+npm publish
+```
 
 # Comment
 ```scss

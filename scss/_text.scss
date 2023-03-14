@@ -35,3 +35,11 @@ $_textTransformProperties: (
     text-transform: $property_value !important;
   }
 }
+
+// Text decoration
+$_textDecoration: none underline line-through;
+@each $i in $_textDecoration {
+  .text-decoration-#{$i} {
+    text-decoration: $i !important;
+  }
+}
