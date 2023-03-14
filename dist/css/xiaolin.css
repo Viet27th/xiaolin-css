@@ -5706,5 +5706,101 @@ textarea:focus {
     max-height: auto !important;
   }
 }
+.text-start {
+  text-align: left !important;
+}
 
-/*# sourceMappingURL=xiaolin.css.map */
+@media (min-width: 576px) {
+  .text-sm-start {
+    text-align: left !important;
+  }
+}
+@media (min-width: 768px) {
+  .text-md-start {
+    text-align: left !important;
+  }
+}
+@media (min-width: 992px) {
+  .text-lg-start {
+    text-align: left !important;
+  }
+}
+@media (min-width: 1200px) {
+  .text-xl-start {
+    text-align: left !important;
+  }
+}
+@media (min-width: 1400px) {
+  .text-xxl-start {
+    text-align: left !important;
+  }
+}
+.text-end {
+  text-align: right !important;
+}
+
+@media (min-width: 576px) {
+  .text-sm-end {
+    text-align: right !important;
+  }
+}
+@media (min-width: 768px) {
+  .text-md-end {
+    text-align: right !important;
+  }
+}
+@media (min-width: 992px) {
+  .text-lg-end {
+    text-align: right !important;
+  }
+}
+@media (min-width: 1200px) {
+  .text-xl-end {
+    text-align: right !important;
+  }
+}
+@media (min-width: 1400px) {
+  .text-xxl-end {
+    text-align: right !important;
+  }
+}
+.text-center {
+  text-align: center !important;
+}
+
+@media (min-width: 576px) {
+  .text-sm-center {
+    text-align: center !important;
+  }
+}
+@media (min-width: 768px) {
+  .text-md-center {
+    text-align: center !important;
+  }
+}
+@media (min-width: 992px) {
+  .text-lg-center {
+    text-align: center !important;
+  }
+}
+@media (min-width: 1200px) {
+  .text-xl-center {
+    text-align: center !important;
+  }
+}
+@media (min-width: 1400px) {
+  .text-xxl-center {
+    text-align: center !important;
+  }
+}
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.text-capitalize {
+  text-transform: capitalize !important;
+}

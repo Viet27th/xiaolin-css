@@ -1,0 +1,37 @@
+////
+/// CSS for "text"
+////
+@use "variables";
+@use "mixins";
+
+// Text alignment
+$_textAlignProperties: (
+  start: left,
+  end: right,
+  center: center,
+);
+@each $property_key, $property_value in $_textAlignProperties {
+  .text-#{$property_key} {
+    text-align: $property_value !important;
+  }
+
+  @each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
+    @include mixins.MinWidth($breakpoint_key) {
+      .text-#{$breakpoint_key}-#{$property_key} {
+        text-align: $property_value !important;
+      }
+    }
+  }
+}
+
+// Text transform
+$_textTransformProperties: (
+  uppercase: uppercase,
+  lowercase: lowercase,
+  capitalize: capitalize,
+);
+@each $property_key, $property_value in $_textTransformProperties {
+  .text-#{$property_key} {
+    text-transform: $property_value !important;
+  }
+}
