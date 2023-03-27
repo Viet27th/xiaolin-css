@@ -1,13 +1,14 @@
 **Lightweight CSS framework.**
 
 # Basic Usage
-Install via one of:
+
+**Install via one of:**
 ```bash
 yarn add xiaolin-css
 npm install xiaolin-css
 ```
 
-Enter this code in your `index.scss` file:
+**Enter this code in your `index.scss` file:**
 ```scss
 // In case you want to use the "full" feature
 @use "xiaolin-css/scss/xiaolin.scss";
@@ -19,7 +20,7 @@ Enter this code in your `index.scss` file:
 @use "xiaolin-css/scss/xiaolin-grid.scss";
 ```
 
-If you want to override some variables:
+**If you want to override some variables:**
 ```scss
 // First, you will define some variables
 $breakpoints: (
@@ -64,6 +65,42 @@ $fontFamilies: (
   $gutterSizes: (0, 4, 5, 8, 10, 16, 32, 64)
 );
 ```
+
+**Use Mixins**
+```scss
+// Register use our "mixins" at the top of any SCSS file you need
+@use "xiaolin-css/scss/mixins" as XiaolinCSSMixins;
+
+.your-class-name {
+  color: green;
+  ...
+  @include XiaolinCSSMixins.MinWidth(lg) {
+    font-size: 25px;
+  }
+  @include XiaolinCSSMixins.MaxWidth(lg) {
+    font-size: 20px;
+  }
+}
+
+
+// Output
+.your-class-name {
+  color: green;
+  ...
+}
+@media (min-width: 992px) {
+  .your-class-name {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 991px) {
+  .your-class-name {
+    font-size: 20px;
+  }
+}
+```
+
 
 # Just simple Document
 > https://viet27th.github.io/xiaolin-css/sassdoc/index.html

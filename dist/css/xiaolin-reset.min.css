@@ -1,5 +1,5 @@
 /*!
-  Xiaolin CSS - Reset v0.1 0.8 (https://xiaolincss.com)
+  Xiaolin CSS - Reset v0.1 0.9 (https://xiaolincss.com)
   Copyright 2022-2023 The Xiaolin CSS Authors
   Licensed under MIT (https://github.com/Viet27th/xiaolin-css/blob/master/LICENSE)
 */*,*::before,*::after{box-sizing:border-box}*{margin:0;padding:0}html{font-size:14px}body{font-size:1rem;font-family:"Arial",sans-serif;font-weight:400;line-height:1;scroll-behavior:smooth}a,a:hover{text-decoration:none}button:focus,input:focus,select:focus,textarea:focus{outline:none;box-shadow:none}/*# sourceMappingURL=xiaolin-reset.min.css.map */
