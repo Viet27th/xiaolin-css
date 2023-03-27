@@ -1,0 +1,9 @@
+////
+/// CSS for "pointer-events"
+////
+$_properties: none, auto;
+@each $i in $_properties {
+  .pe-#{$i} {
+    pointer-events: $i !important;
+  }
+}

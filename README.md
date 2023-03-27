@@ -21,7 +21,7 @@ Enter this code in your `index.scss` file:
 
 If you want to override some variables:
 ```scss
-// Define some variables
+// First, you will define some variables
 $breakpoints: (
   sm: 576, // ≥576px Small
   md: 768, // ≥768px Medium
@@ -49,7 +49,8 @@ $fontFamilies: (
   3rd: ("Red Hat", #{$_fontFallback}),
 );
 
-// Override the default variables of library
+// Then override the default variables of library as below
+// See the file `scss/_variables.scss` for how many variables you can override
 @use "xiaolin-css/scss/xiaolin.scss" with (
   $breakpoints: $breakpoints,
   $containerMaxWidths: $containerMaxWidths,

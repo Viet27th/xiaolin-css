@@ -1,0 +1,11 @@
+////
+/// CSS for "user-select"
+////
+$_properties: all, auto, none;
+@each $i in $_properties {
+  .user-select-#{$i} {
+    -webkit-user-select: $i !important;
+    -ms-user-select: $i !important;
+    user-select: $i !important;
+  }
+}

@@ -1,0 +1,10 @@
+////
+/// CSS for "overflow"
+////
+
+$_properties: auto, hidden, visible, scroll;
+@each $i in $_properties {
+  .overflow-#{$i} {
+    overflow: $i !important;
+  }
+}
