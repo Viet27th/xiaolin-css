@@ -71,6 +71,7 @@ $fontFamilies: (
 // Register use our "mixins" at the top of any SCSS file you need
 @use "xiaolin-css/scss/mixins" as XiaolinCSSMixins;
 
+// Use
 .your-class-name {
   color: green;
   ...
@@ -83,7 +84,7 @@ $fontFamilies: (
 }
 
 
-// Output
+// Your output
 .your-class-name {
   color: green;
   ...

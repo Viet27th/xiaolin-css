@@ -16,6 +16,15 @@ yarn build
 npm publish
 ```
 
+Unpublish
+```bash
+# Unpublish a specific version
+npm unpublish <package_name>@<version>
+
+# Unpublish all versions
+npm unpublish <package_name> --force
+```
+
 # Comment
 ```scss
 // This comment won't be included in the CSS.
