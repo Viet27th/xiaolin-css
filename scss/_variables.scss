@@ -6,8 +6,13 @@
 /// https://nextjs.org/docs/basic-features/built-in-css-support#sass-variables
 ////
 
-// Define the condition variables
+/// Specifies whether to smoothly animate the scroll position, instead of a straight jump, 
+/// when the user clicks on a link within a scrollable box.
 $enableSmoothScroll: true !default;
+
+/// Maximum number of columns on the page.
+/// By default, XiaolinCSS's grid system allows up to 12 columns on the page
+$columnNumber: 12 !default;
 
 /// Point to break layout
 $breakpoints: (
@@ -31,7 +36,7 @@ $containerMaxWidths: (
 $containerFluidLimitMaxWidth: 1920px !default;
 
 /// Main spacing for this Library.
-/// containers, grid, and so on use this.
+/// `containers`, `grid`, and so on use this.
 /// Default is `16px` cause 16:9 aspect ratio is the most common aspect ratio for 
 /// televisions and computer monitors
 $mainGutterWidth: 16px !default;

@@ -4,8 +4,6 @@
 @use "variables";
 @use "mixins";
 
-$_columnNumber: 12;
-
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -32,10 +30,10 @@ $_columnNumber: 12;
 }
 
 // Return .col-[1->12]
-@for $i from 1 through $_columnNumber {
+@for $i from 1 through variables.$columnNumber {
   .col-#{$i} {
     flex: 0 0 auto;
-    width: calc($i / $_columnNumber) * 100%;
+    width: calc($i / variables.$columnNumber) * 100%;
     padding: variables.$mainGutterWidth;
   }
 }
@@ -57,11 +55,29 @@ $_columnNumber: 12;
 // Return .col-[breakpoints]-[1->12]
 @each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
   @include mixins.MinWidth($breakpoint_key) {
-    @for $i from 1 through $_columnNumber {
+    @for $i from 1 through variables.$columnNumber {
       .col-#{$breakpoint_key}-#{$i} {
         flex: 0 0 auto;
-        width: calc($i / $_columnNumber) * 100%;
+        width: calc($i / variables.$columnNumber) * 100%;
         padding: variables.$mainGutterWidth;
+      }
+    }
+  }
+}
+
+// Return .offset-[0->11]
+@for $i from 0 through variables.$columnNumber - 1 {
+  .offset-#{$i} {
+    margin-left: calc($i / variables.$columnNumber) * 100%;
+  }
+}
+
+// Return .offset-[breakpoints]-[0->11]
+@each $breakpoint_key, $breakpoint_value in variables.$breakpoints {
+  @include mixins.MinWidth($breakpoint_key) {
+    @for $i from 0 through variables.$columnNumber - 1 {
+      .offset-#{$breakpoint_key}-#{$i} {
+        margin-left: calc($i / variables.$columnNumber) * 100%;
       }
     }
   }
