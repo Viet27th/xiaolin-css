@@ -16,7 +16,6 @@ $_sides: (
   "x": "",
   "y": "",
 );
-$_maxGutterSize: 50;
 
 // Return .m-auto and .p-auto
 @each $property_key, $property_value in $_properties {
