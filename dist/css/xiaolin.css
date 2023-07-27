@@ -1,5 +1,5 @@
 /*!
-  Xiaolin CSS v0.1 0.92 (https://xiaolincss.com)
+  Xiaolin CSS v0.1 0.93 (https://xiaolincss.com)
   Copyright 2022-2023 The Xiaolin CSS Authors
   Licensed under MIT (https://github.com/Viet27th/xiaolin-css/blob/master/LICENSE)
 */
@@ -23,7 +23,18 @@ body {
   font-family: "Arial", sans-serif;
   font-weight: 400;
   line-height: 1;
+  -webkit-text-size-adjust: 100%;
+          text-size-adjust: 100%;
   scroll-behavior: smooth;
+}
+
+input,
+button,
+select,
+option,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
 }
 
 a,
@@ -6117,19 +6128,16 @@ textarea:focus {
 
 .user-select-all {
   -webkit-user-select: all !important;
-  -ms-user-select: all !important;
   user-select: all !important;
 }
 
 .user-select-auto {
   -webkit-user-select: auto !important;
-  -ms-user-select: auto !important;
   user-select: auto !important;
 }
 
 .user-select-none {
   -webkit-user-select: none !important;
-  -ms-user-select: none !important;
   user-select: none !important;
 }
 

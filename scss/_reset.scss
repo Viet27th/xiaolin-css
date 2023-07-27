@@ -23,10 +23,20 @@ body {
   font-family: variables.$defaultFontFamily;
   font-weight: variables.$defaultFontWeight;
   line-height: variables.$defaultLineHeight;
+  text-size-adjust: 100%;
 
   @if (variables.$enableSmoothScroll == true) {
     scroll-behavior: smooth;
   }
+}
+
+input,
+button,
+select,
+option,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
 }
 
 a,
