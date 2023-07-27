@@ -41,5 +41,10 @@
     "sass": "^1.58.3",
     "sassdoc": "^2.7.4"
   },
-  "peerDependencies": {}
+  "peerDependencies": {},
+  "browserslist": [
+    "last 4 versions",
+    "> 1%",
+    "not dead"
+  ]
 }
