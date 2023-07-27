@@ -10,10 +10,10 @@
     "clean": "rimraf dist sassdoc",
     "generate:doc": "sassdoc scss/",
     "dev": "yarn clean && sass --watch --no-source-map --style=expanded --error-css --trace scss:dist/css",
-    "build:file1": "sass scss/xiaolin.scss:dist/css/xiaolin.css && sass --style=compressed scss/xiaolin.scss:dist/css/xiaolin.min.css",
-    "build:file2": "sass scss/xiaolin-reset.scss:dist/css/xiaolin-reset.css && sass --style=compressed scss/xiaolin-reset.scss:dist/css/xiaolin-reset.min.css",
-    "build:file3": "sass scss/xiaolin-grid.scss:dist/css/xiaolin-grid.css && sass --style=compressed scss/xiaolin-grid.scss:dist/css/xiaolin-grid.min.css",
-    "build": "yarn clean && yarn generate:doc && yarn build:file1 && yarn build:file2 && yarn build:file3"
+    "build:file1": "sass --no-source-map scss/xiaolin.scss:dist/css/xiaolin.css && sass --no-source-map --style=compressed scss/xiaolin.scss:dist/css/xiaolin.min.css",
+    "build:file2": "sass --no-source-map scss/xiaolin-reset.scss:dist/css/xiaolin-reset.css && sass --no-source-map --style=compressed scss/xiaolin-reset.scss:dist/css/xiaolin-reset.min.css",
+    "build:file3": "sass --no-source-map scss/xiaolin-grid.scss:dist/css/xiaolin-grid.css && sass --no-source-map --style=compressed scss/xiaolin-grid.scss:dist/css/xiaolin-grid.min.css",
+    "build": "yarn clean && yarn generate:doc && yarn build:file1 && yarn build:file2 && yarn build:file3 && npx postcss dist/css --dir dist/css --map"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,9 @@
   ],
   "dependencies": {},
   "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.27",
+    "postcss-cli": "^10.1.0",
     "rimraf": "^4.1.2",
     "sass": "^1.58.3",
     "sassdoc": "^2.7.4"
